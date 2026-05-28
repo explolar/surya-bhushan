@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surya B K Singh | Functional Head — Process Development & Technology Transfer</title>
+  <meta name="description" content="20 years in biopharmaceutical R&D. Functional Head at Intas Pharmaceuticals. Expert in DSP, chromatography, biosimilars, and technology transfer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:          #FFFFFF;
+      --bg-soft:     #F4F7FB;
+      --ink:         #0D1521;
+      --ink-2:       #2D3748;
+      --ink-3:       #4A5568;
+      --ink-4:       #718096;
+      --blue:        #1B3A6B;
+      --blue-mid:    #2A5298;
+      --blue-lt:     #EBF4FF;
+      --teal:        #0A7A75;
+      --teal-lt:     #E0F5F4;
+      --border:      #E2E8F0;
+      --border-2:    #CBD5E0;
+      --sans:        "IBM Plex Sans", system-ui, sans-serif;
+      --serif:       "IBM Plex Serif", Georgia, serif;
+      --mono:        "IBM Plex Mono", monospace;
+      --r:           8px;
+      --max:         1160px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    ::selection { background: var(--blue); color: #fff; }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 clamp(20px,4vw,60px); }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+    .nav-logo { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--blue); letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--ink-3); transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-btn { font-size: 12.5px; font-weight: 600; color: var(--blue); border: 1.5px solid var(--blue); padding: 6px 16px; border-radius: 4px; transition: background .2s, color .2s; }
+    .nav-btn:hover { background: var(--blue); color: #fff; }
+    @media (max-width: 760px) { .nav-links { display: none; } }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 116px 0 80px;
+      background: linear-gradient(150deg, #fff 55%, #EEF4FF 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: center; }
+    @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .hero-right { order: -1; } }
+
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--blue-lt); color: var(--blue);
+      font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 100px; margin-bottom: 20px;
+    }
+    .chip::before { content: ""; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; }
+
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 600; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 10px;
+    }
+    .hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-sub { font-size: 16px; color: var(--ink-3); line-height: 1.7; max-width: 50ch; margin-bottom: 28px; }
+
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 32px; }
+    .meta-pill {
+      display: flex; align-items: center; gap: 6px;
+      font-family: var(--mono); font-size: 11.5px; color: var(--ink-3);
+    }
+    .meta-pill .dot { width: 4px; height: 4px; background: var(--teal); border-radius: 50%; }
+
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-p { background: var(--blue); color: #fff; padding: 11px 24px; border-radius: 5px; font-size: 14px; font-weight: 600; transition: background .2s; }
+    .btn-p:hover { background: var(--blue-mid); }
+    .btn-s { border: 1.5px solid var(--blue); color: var(--blue); padding: 10px 24px; border-radius: 5px; font-size: 14px; font-weight: 600; transition: all .2s; }
+    .btn-s:hover { background: var(--blue); color: #fff; }
+
+    /* photo */
+    .hero-right { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .photo-ring {
+      width: 220px; height: 220px; border-radius: 50%; overflow: hidden;
+      border: 4px solid var(--blue);
+      box-shadow: 0 8px 32px rgba(27,58,107,.18);
+    }
+    .photo-ring img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+    .vitals { background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--r); padding: 16px 20px; width: 100%; }
+    .vr { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .vr:last-child { border-bottom: 0; }
+    .vk { font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-4); }
+    .vv { font-weight: 500; color: var(--ink-2); text-align: right; font-size: 12.5px; }
+    .vv a { color: var(--blue); }
+
+    /* ── STATS BAR ── */
+    .statsbar { background: var(--blue); padding: 34px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(6,1fr); }
+    @media (max-width: 880px) { .stats-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 480px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
+    .si { text-align: center; padding: 14px 10px; border-right: 1px solid rgba(255,255,255,.14); }
+    .si:last-child { border-right: 0; }
+    .si-n { font-family: var(--serif); font-size: clamp(30px,4vw,50px); font-weight: 600; color: #fff; line-height: 1; letter-spacing: -.03em; }
+    .si-n sup { font-size: .38em; color: rgba(255,255,255,.65); vertical-align: super; letter-spacing: .06em; }
+    .si-l { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 6px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 88px 0; }
+    .sec-soft { background: var(--bg-soft); }
+    .sec-tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .sec-h { font-family: var(--serif); font-size: clamp(26px,3.8vw,40px); font-weight: 600; letter-spacing: -.025em; line-height: 1.15; color: var(--ink); margin-bottom: 48px; }
+    .sec-h em { font-style: italic; color: var(--blue); }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; }
+    @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-text p { font-size: 16px; line-height: 1.78; color: var(--ink-2); margin-bottom: 16px; }
+    .about-text p:first-child::first-letter {
+      font-family: var(--serif); font-size: 3.6em; font-weight: 600;
+      line-height: .8; float: left; padding: .08em .1em 0 0; color: var(--blue);
+    }
+    .hl { background: var(--blue-lt); color: var(--blue-mid); padding: 1px 5px; border-radius: 3px; font-weight: 500; }
+
+    .skill-block { margin-bottom: 14px; }
+    .skill-block h4 { font-family: var(--mono); font-size: 9.5px; letter-spacing: .15em; text-transform: uppercase; color: var(--teal); margin-bottom: 9px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .t { font-family: var(--mono); font-size: 10.5px; padding: 3px 10px; border-radius: 100px; }
+    .tb { background: var(--blue-lt); color: var(--blue); border: 1px solid #C3D8F5; }
+    .tt { background: var(--teal-lt); color: var(--teal); border: 1px solid #B3E5E3; }
+    .tg { background: #F1F5F9; color: var(--ink-3); border: 1px solid var(--border); }
+
+    /* ── PLATFORMS ── */
+    .plat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    @media (max-width: 880px) { .plat-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 500px) { .plat-grid { grid-template-columns: 1fr; } }
+    .plat-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--r);
+      padding: 22px; position: relative; overflow: hidden;
+      transition: box-shadow .2s, border-color .2s;
+    }
+    .plat-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.08); border-color: var(--border-2); }
+    .plat-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .plat-card:nth-child(1)::before { background: var(--blue); }
+    .plat-card:nth-child(2)::before { background: var(--teal); }
+    .plat-card:nth-child(3)::before { background: #7B2D8B; }
+    .plat-card:nth-child(4)::before { background: #B8550A; }
+    .plat-card:nth-child(5)::before { background: #0A6640; }
+    .plat-ico {
+      width: 42px; height: 42px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 12px; font-weight: 600;
+      margin-bottom: 13px;
+    }
+    .ib { background: var(--blue-lt); color: var(--blue); }
+    .it { background: var(--teal-lt); color: var(--teal); }
+    .ip { background: #F3E8F9; color: #7B2D8B; }
+    .io { background: #FEF0E7; color: #B8550A; }
+    .ig { background: #E8F5EE; color: #0A6640; }
+    .plat-name { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 4px; letter-spacing: -.01em; }
+    .plat-sub { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 13px; }
+
+    /* ── TIMELINE ── */
+    .tl { position: relative; }
+    .tl::before { content: ""; position: absolute; left: 112px; top: 0; bottom: 0; width: 1px; background: var(--border-2); }
+    @media (max-width: 620px) { .tl::before { left: 0; } }
+    .te {
+      display: grid; grid-template-columns: 112px 1fr; gap: 38px;
+      padding: 30px 0; border-bottom: 1px solid var(--border); position: relative;
+    }
+    .te:last-child { border-bottom: 0; }
+    @media (max-width: 620px) { .te { grid-template-columns: 1fr; gap: 8px; padding-left: 18px; } }
+    .te::before {
+      content: ""; position: absolute; left: 107px; top: 40px;
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--border-2); z-index: 1;
+    }
+    .te.now::before { background: var(--blue); border-color: var(--blue); box-shadow: 0 0 0 4px rgba(27,58,107,.12); }
+    @media (max-width: 620px) { .te::before { left: -6px; top: 14px; } }
+    .te-yr { font-family: var(--mono); font-size: 11px; color: var(--ink-4); padding-top: 4px; text-align: right; padding-right: 28px; }
+    .te-yr strong { display: block; color: var(--ink-3); font-weight: 500; font-size: 12px; }
+    .te-yr span { display: block; font-size: 10px; margin-top: 3px; }
+    @media (max-width: 620px) { .te-yr { text-align: left; padding-right: 0; } }
+    .te-badge { display: inline-block; background: var(--blue); color: #fff; font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; margin-bottom: 10px; }
+    .te-org { font-size: 18px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); line-height: 1.2; margin-bottom: 3px; }
+    .te-org em { color: var(--blue); font-style: italic; font-weight: 400; }
+    .te-pos { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 11px; }
+    .te-prods { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 13px; }
+    .te-ul li { position: relative; padding-left: 16px; padding-bottom: 5px; font-size: 14px; line-height: 1.6; color: var(--ink-3); }
+    .te-ul li::before { content: "→"; position: absolute; left: 0; color: var(--teal); font-size: 11px; top: 2px; }
+
+    /* ── PATENTS ── */
+    .pat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    @media (max-width: 700px) { .pat-grid { grid-template-columns: 1fr; } }
+    .pat-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r); padding: 20px; display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; }
+    .pat-idx { font-family: var(--mono); font-size: 10.5px; color: var(--blue); padding-top: 3px; font-weight: 500; }
+    .pat-ttl { font-size: 15px; font-weight: 500; line-height: 1.4; color: var(--ink); margin-bottom: 8px; }
+    .pat-meta { font-family: var(--mono); font-size: 10.5px; color: var(--ink-4); }
+    .pill { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; padding: 2px 9px; border-radius: 100px; margin-right: 7px; }
+    .pill-g { background: #E6F7EE; color: #0A6640; border: 1px solid #B3E5CC; }
+    .pill-f { background: var(--blue-lt); color: var(--blue); border: 1px solid #C3D8F5; }
+    .pill-r { background: #FFF7E6; color: #B8550A; border: 1px solid #F5DFB3; }
+    .paper-list { display: grid; gap: 12px; margin-top: 38px; }
+    .paper-card { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 0 var(--r) var(--r) 0; padding: 17px 20px; display: grid; grid-template-columns: 32px 1fr; gap: 12px; }
+    .paper-idx { font-family: var(--mono); font-size: 10.5px; color: var(--teal); padding-top: 3px; }
+    .paper-ttl { font-size: 15px; font-style: italic; line-height: 1.4; color: var(--ink); margin-bottom: 5px; }
+    .paper-meta { font-family: var(--mono); font-size: 10.5px; color: var(--ink-4); }
+
+    /* ── EQUIPMENT ── */
+    .equip-wrap { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .equip-head { display: grid; grid-template-columns: 190px 155px 1fr; background: var(--blue); padding: 12px 22px; }
+    @media (max-width: 700px) { .equip-head { display: none; } }
+    .equip-head span { font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+    .equip-row { display: grid; grid-template-columns: 190px 155px 1fr; padding: 20px 22px; border-bottom: 1px solid var(--border); align-items: start; }
+    .equip-row:last-child { border-bottom: 0; }
+    .equip-row:nth-child(odd) { background: var(--bg-soft); }
+    @media (max-width: 700px) { .equip-row { grid-template-columns: 1fr; gap: 8px; } }
+    .eq-area { font-weight: 600; font-size: 14.5px; color: var(--ink); }
+    .eq-area span { display: block; font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); font-weight: 400; margin-bottom: 4px; }
+    .eq-scale { font-family: var(--mono); font-size: 12.5px; color: var(--blue); font-weight: 500; line-height: 1.6; }
+    .eq-gear { font-size: 13.5px; line-height: 1.7; color: var(--ink-3); }
+    .eq-gear b { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-right: 5px; }
+
+    /* ── EDUCATION & REFS ── */
+    .edu-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-bottom: 52px; }
+    @media (max-width: 620px) { .edu-grid { grid-template-columns: 1fr; } }
+    .edu-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r); padding: 24px; }
+    .edu-type { font-family: var(--mono); font-size: 9.5px; letter-spacing: .15em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .edu-inst { font-size: 18px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); line-height: 1.2; margin-bottom: 4px; }
+    .edu-deg { font-style: italic; color: var(--blue); font-size: 14.5px; margin-bottom: 6px; }
+    .edu-loc { font-size: 13px; color: var(--ink-4); margin-bottom: 10px; }
+    .edu-yr { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); padding-top: 10px; border-top: 1px solid var(--border); }
+    .ref-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    @media (max-width: 620px) { .ref-grid { grid-template-columns: 1fr; } }
+    .ref-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r); padding: 24px; }
+    .ref-nm { font-size: 18px; font-weight: 600; letter-spacing: -.02em; color: var(--ink); margin-bottom: 3px; }
+    .ref-ti { font-style: italic; color: var(--blue); font-size: 14px; margin-bottom: 3px; }
+    .ref-af { font-size: 13px; color: var(--ink-4); margin-bottom: 12px; }
+    .ref-ct { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); padding-top: 12px; border-top: 1px solid var(--border); display: grid; gap: 4px; }
+
+    /* ── CONTACT ── */
+    .contact-sec { background: var(--blue); padding: 88px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .contact-sec .sec-tag { color: rgba(255,255,255,.55); }
+    .contact-sec .sec-h { color: #fff; margin-bottom: 14px; }
+    .contact-sec .sec-h em { color: rgba(255,255,255,0.85); }
+    .contact-tagline { font-size: 15.5px; color: rgba(255,255,255,.75); line-height: 1.7; }
+    .ch-list { display: grid; gap: 11px; }
+    .ch {
+      display: flex; align-items: center; gap: 13px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--r); padding: 13px 16px; transition: background .2s;
+    }
+    .ch:hover { background: rgba(255,255,255,.14); }
+    .ch-ico { width: 34px; height: 34px; background: rgba(255,255,255,.14); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; color: #fff; font-family: var(--mono); font-weight: 600; font-size: 12px; }
+    .ch-lbl { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 2px; }
+    .ch-val { font-size: 14px; color: #fff; font-weight: 500; }
+
+    /* ── FOOTER ── */
+    footer { background: #0A0F1A; padding: 24px 0; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .ft { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,.35); }
+
+    /* ── REVEAL ── */
+    .rv { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    .rv.in { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-logo">Surya B K Singh</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#timeline">Career</a>
+      <a href="#patents">Publications</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="Surya B K Singh_26.pdf" download class="nav-btn">Resume ↓</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="chip">Biopharmaceutical R&amp;D · DSP / MSAT</div>
+        <h1>Surya <em>B K Singh</em></h1>
+        <p class="hero-sub">Functional Head — Process Development &amp; Technology Transfer. Twenty years across recombinant therapeutics, from gram-scale bench refolding to two-thousand-litre commercial production.</p>
+        <div class="hero-meta">
+          <span class="meta-pill"><span class="dot"></span>Intas Pharmaceuticals · Ahmedabad</span>
+          <span class="meta-pill"><span class="dot"></span>M.Sc. BHU · Ph.D. Pursuing</span>
+          <span class="meta-pill"><span class="dot"></span>English · Hindi · Gujarati</span>
+        </div>
+        <div class="hero-btns">
+          <a href="mailto:surya.protein@gmail.com" class="btn-p">Contact Me</a>
+          <a href="Surya B K Singh_26.pdf" download class="btn-s">Download Resume</a>
+          <a href="https://www.linkedin.com/in/surya-b-kumar-00805914" class="btn-s">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="photo-ring">
+          <img src="profile.png" alt="Surya B K Singh" />
+        </div>
+        <div class="vitals">
+          <div class="vr"><span class="vk">Current Role</span><span class="vv">Functional Head</span></div>
+          <div class="vr"><span class="vk">Organisation</span><span class="vv">Intas Pharmaceuticals</span></div>
+          <div class="vr"><span class="vk">Location</span><span class="vv">South Bopal, Ahmedabad</span></div>
+          <div class="vr"><span class="vk">Mobile</span><span class="vv"><a href="tel:+917090333340">+91 70903 33340</a></span></div>
+          <div class="vr"><span class="vk">Email</span><span class="vv"><a href="mailto:surya.protein@gmail.com">surya.protein@gmail.com</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="statsbar">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="si"><div class="si-n">20<sup>yr</sup></div><div class="si-l">Industry Tenure</div></div>
+      <div class="si"><div class="si-n">06</div><div class="si-l">Patent Filings</div></div>
+      <div class="si"><div class="si-n">07</div><div class="si-l">Organisations</div></div>
+      <div class="si"><div class="si-n">2<sup>KL</sup></div><div class="si-l">Max Bioreactor Scale</div></div>
+      <div class="si"><div class="si-n">25</div><div class="si-l">Team Size, Current</div></div>
+      <div class="si"><div class="si-n">12</div><div class="si-l">Concurrent Projects</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-tag">§01 — Professional Profile</div>
+    <h2 class="sec-h">A career in <em>solution</em>.</h2>
+    <div class="about-grid">
+      <div class="about-text rv">
+        <p>Twenty years of hands-on and managerial work across the <span class="hl">recombinant therapeutics</span> industry — process development and technology transfer of biosimilars and innovator molecules spanning macular degeneration, oncology, diabetes and osteoporosis. From hyaluronidase to ranibizumab; insulin glargine to nivolumab; gram-scale benchwork to two-thousand-litre commercial production.</p>
+        <p>Deep strengths in <span class="hl">process and impurity characterisation</span>, bio-similarity to meet EMA and US-FDA requirements, in-process method development, pilot-scale transfer, optimisation, and the authorship of the documents that carry a molecule through regulatory review.</p>
+        <p>Collaboration, planning, presentation and troubleshooting define the working method. The instruments — <span class="hl">chromatography, refolding, TFF, lyophilisation</span> — are familiar from millilitre to multi-thousand-litre scale. Currently leading a team of twenty-five across twelve concurrent projects at Intas Pharmaceuticals.</p>
+      </div>
+      <div class="rv">
+        <div class="skill-block"><h4>Core Expertise</h4><div class="tags"><span class="t tb">Downstream Processing</span><span class="t tb">Technology Transfer</span><span class="t tb">Process Characterisation</span><span class="t tb">Scale-up</span><span class="t tb">QbD / DOE</span><span class="t tb">Regulatory Authorship</span></div></div>
+        <div class="skill-block"><h4>Regulatory Markets</h4><div class="tags"><span class="t tt">US-FDA</span><span class="t tt">EMA</span><span class="t tt">CTD Authoring</span><span class="t tt">IMPD / CMC</span><span class="t tt">FDA Audit</span></div></div>
+        <div class="skill-block"><h4>Analytical Techniques</h4><div class="tags"><span class="t tg">RP-HPLC</span><span class="t tg">SEC</span><span class="t tg">CEX / HIC</span><span class="t tg">SDS-PAGE</span><span class="t tg">Western Blot</span><span class="t tg">UV/Fluorescence</span></div></div>
+        <div class="skill-block"><h4>Software / Methods</h4><div class="tags"><span class="t tg">JMP</span><span class="t tg">Design Expert</span><span class="t tg">Plackett–Burman</span><span class="t tg">OFAT</span><span class="t tg">Multivariate DOE</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="sec-soft">
+  <div class="wrap">
+    <div class="sec-tag">§02 — Platforms</div>
+    <h2 class="sec-h">Expertise across <em>five platforms</em>.</h2>
+    <div class="plat-grid rv">
+      <div class="plat-card">
+        <div class="plat-ico ib">ADC</div>
+        <div class="plat-name">Antibody Drug Conjugates</div>
+        <div class="plat-sub">ADC Platform</div>
+        <div class="tags"><span class="t tb">TDM-1</span><span class="t tb">Enhertu</span><span class="t tg">Oncology</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-ico it">mAb</div>
+        <div class="plat-name">Mammalian Proteins</div>
+        <div class="plat-sub">IgG1 · IgG2 · IgG4 · Fc · Bi-Specific</div>
+        <div class="tags"><span class="t tt">Nivolumab</span><span class="t tt">Pembrolizumab</span><span class="t tt">Ranibizumab</span><span class="t tt">Aflibercept</span><span class="t tt">Ustekinumab</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-ico ip">Mic</div>
+        <div class="plat-name">Microbial Proteins</div>
+        <div class="plat-sub">E. coli Expression</div>
+        <div class="tags"><span class="t tg">GLP-1</span><span class="t tg">Fab</span><span class="t tg">Insulin Analogs</span><span class="t tg">IFN α-2b</span><span class="t tg">GCSF</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-ico io">Enz</div>
+        <div class="plat-name">Enzymes &amp; Hormones</div>
+        <div class="plat-sub">CHO · E. coli</div>
+        <div class="tags"><span class="t tg">Hyaluronidase rHuPH20</span><span class="t tg">LH</span><span class="t tg">HCG</span><span class="t tg">PTH</span><span class="t tg">Anti-D</span></div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-ico ig">Ins</div>
+        <div class="plat-name">Insulin Analogs</div>
+        <div class="plat-sub">Microbial · Refolding Expertise</div>
+        <div class="tags"><span class="t tg">Glargine</span><span class="t tg">Lispro</span><span class="t tg">Human Insulin</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-tag">§03 — Career Chronicle</div>
+    <h2 class="sec-h">Twenty years, <em>in order</em>.</h2>
+    <div class="tl">
+
+      <div class="te now rv">
+        <div class="te-yr"><strong>May 2023</strong>Present<span>≈ 3 yr · current</span></div>
+        <div>
+          <div class="te-badge">Current Role</div>
+          <div class="te-org">Intas Pharmaceuticals <em>— Functional Head</em></div>
+          <div class="te-pos">Biotechnology R&amp;D · Ahmedabad, Gujarat</div>
+          <div class="te-prods"><span class="t tb">Hyaluronidase</span><span class="t tb">ADC · TDM-1</span><span class="t tb">ADC · Enhertu</span><span class="t tb">Nivolumab</span><span class="t tb">Pembrolizumab</span><span class="t tg">LH</span><span class="t tg">HCG</span><span class="t tg">Anti-D</span></div>
+          <ul class="te-ul">
+            <li>Vertical lead, downstream development &amp; scale-up across ADC, mammalian, hormonal, enzymatic and microbial biosimilar platforms.</li>
+            <li>Technology transfer ownership; enablement of scale-up for commercial manufacturing.</li>
+            <li>4–5 managers reporting; 12 concurrent projects; total team of 25.</li>
+            <li>Process characterisation and control strategy by QbD; resin and TFF reuse studies; virus validation.</li>
+            <li>Authorship and review of TTD/CTD sections for regulatory submission. Direct interface for FDA audit on downstream side.</li>
+            <li>HCP removal and bioactivity assessment of hydrophobic variants in aflibercept.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="te rv">
+        <div class="te-yr"><strong>Aug 2019</strong>May 2023<span>≈ 4 yr</span></div>
+        <div>
+          <div class="te-org">Lupin Limited <em>— Group Lead</em></div>
+          <div class="te-pos">Biotechnology R&amp;D · DSP</div>
+          <div class="te-prods"><span class="t tt">Ranibizumab</span><span class="t tt">Aflibercept</span><span class="t tt">Nivolumab</span><span class="t tt">Ustekinumab</span></div>
+          <ul class="te-ul">
+            <li>Vendor-capability evaluation, equipment qualification, resin life-cycle, cost-engineering. IMPD and CMC authoring for EU/US filings.</li>
+            <li>Pre-PPQ tech-transfer documents, FMEA/PAR/NOR/MOR; control strategy; comparability and impurity reports.</li>
+            <li>Impurity isolation by RP-HPLC, CEX, SEC, HIC; clearance spike studies; media optimisation.</li>
+            <li>Refolding-process improvement for Ranibizumab — productivity raised more than 3× through robust chromatography redesign.</li>
+            <li>DOE-led product characterisation in JMP &amp; Design Expert (Plackett–Burman, multivariate, full factorials, OFAT).</li>
+            <li>People management — team of 8 (MSc / MTech / PhD).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="te rv">
+        <div class="te-yr"><strong>Oct 2014</strong>Jul 2019<span>≈ 5 yr</span></div>
+        <div>
+          <div class="te-org">Stelis Biopharma <em>— Strides Arcolab</em></div>
+          <div class="te-pos">Sr. Team Lead · R&amp;D / MFG · Bangalore</div>
+          <div class="te-prods"><span class="t tg">Insulin Glargine</span><span class="t tg">Insulin Lispro</span><span class="t tg">PTH</span><span class="t tg">Bevacizumab</span></div>
+          <ul class="te-ul">
+            <li>Process design via DOE; product maximisation in both quantity and quality.</li>
+            <li>Development reports for evolution into pilot and production; compliant documentation; transfer ownership.</li>
+            <li>50L and 500L manufacturing downstream expertise. Team of 10.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="te rv">
+        <div class="te-yr"><strong>Nov 2009</strong>Sep 2014<span>≈ 5 yr</span></div>
+        <div>
+          <div class="te-org">Unichem Laboratories Ltd.</div>
+          <div class="te-pos">Research Scientist · R&amp;D / Pilot Plant · Goa</div>
+          <div class="te-prods"><span class="t tg">Human Insulin</span><span class="t tg">Glargine</span><span class="t tg">IFN α-2b</span></div>
+          <ul class="te-ul">
+            <li>Design, development and scale-up; tech-transfer from R&amp;D to pilot.</li>
+            <li>Patent authorship; advanced process development; product life-cycle management.</li>
+            <li>Team of 6.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="te rv">
+        <div class="te-yr"><strong>Jul 2007</strong>Oct 2009<span>≈ 2.5 yr</span></div>
+        <div>
+          <div class="te-org">Target-In Century</div>
+          <div class="te-pos">Research Associate · Novel Protein Group · Baroda</div>
+          <div class="te-prods"><span class="t tg">FcE Fusion Protein</span></div>
+          <ul class="te-ul">
+            <li>Novel protein expression and purification by IEX, HIC; formulation development.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="te rv">
+        <div class="te-yr"><strong>Jun 2006</strong>Dec 2006<span>7 months</span></div>
+        <div>
+          <div class="te-org">Intas Pharmaceuticals <em>— First Tenure</em></div>
+          <div class="te-pos">Research Trainee · Downstream Operations · Ahmedabad</div>
+          <div class="te-prods"><span class="t tg">GCSF</span></div>
+          <ul class="te-ul">
+            <li>Downstream operations, chromatography systems, Western blot, document writing, refolding of protein.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="te rv">
+        <div class="te-yr"><strong>Jan 2006</strong><span>Project</span></div>
+        <div>
+          <div class="te-org">Banaras Hindu University</div>
+          <div class="te-pos">Research Project · Varanasi</div>
+          <div class="te-prods"><span class="t tg">Dek 1 Seed Protein</span></div>
+          <ul class="te-ul">
+            <li>Fundamentals of downstream instrumentation; protein purification by GFC; SDS-PAGE; literature search.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PATENTS & PUBLICATIONS -->
+<section id="patents" class="sec-soft">
+  <div class="wrap">
+    <div class="sec-tag">§04 — Invention &amp; Literature</div>
+    <h2 class="sec-h">A bibliography <em>of method</em>.</h2>
+
+    <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-4);margin-bottom:18px;">— I · Patents</div>
+    <div class="pat-grid rv">
+      <div class="pat-card">
+        <div class="pat-idx">P/01</div>
+        <div><div class="pat-ttl">Method for purification of hyaluronidase enzyme.</div><div class="pat-meta"><span class="pill pill-f">Filed</span>PCT/IB2025/056717 · IN202421053456</div></div>
+      </div>
+      <div class="pat-card">
+        <div class="pat-idx">P/02</div>
+        <div><div class="pat-ttl">Development of a novel formulation for stabilisation of recombinant human hyaluronidase (rHuPH20).</div><div class="pat-meta"><span class="pill pill-f">Filed</span>E-1/31022/2025-MUM</div></div>
+      </div>
+      <div class="pat-card">
+        <div class="pat-idx">P/03</div>
+        <div><div class="pat-ttl">Method for purification of gonadotropin hormone.</div><div class="pat-meta"><span class="pill pill-f">Filed</span>E-I/60126/2024-MUM</div></div>
+      </div>
+      <div class="pat-card">
+        <div class="pat-idx">P/04</div>
+        <div><div class="pat-ttl">An improved process for the preparation of pharmaceutical-grade interferon alpha-2b.</div><div class="pat-meta"><span class="pill pill-g">Granted</span>WO 2016/079598 A1</div></div>
+      </div>
+      <div class="pat-card">
+        <div class="pat-idx">P/05</div>
+        <div><div class="pat-ttl">An improved process for the purification of interferon alpha-2b expressed in soluble <em>E. coli</em>.</div><div class="pat-meta"><span class="pill pill-f">Filed</span>Application No. 3628/MUM/2014A</div></div>
+      </div>
+      <div class="pat-card">
+        <div class="pat-idx">P/06</div>
+        <div><div class="pat-ttl">Ranibizumab — a novel refolding process.</div><div class="pat-meta"><span class="pill pill-r">Under Review</span></div></div>
+      </div>
+    </div>
+
+    <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-4);margin-top:44px;margin-bottom:6px;" class="rv">— II · Published Papers</div>
+    <div class="paper-list rv">
+      <div class="paper-card">
+        <div class="paper-idx">L/01</div>
+        <div><div class="paper-ttl">Alternative conformation model of seed protein Dek1 for better understanding of structure–function relationship.</div><div class="paper-meta">Journal of Protein and Proteomics · Vol. 1, No. 2 · Jul–Dec 2010 · pp. 77–90</div></div>
+      </div>
+      <div class="paper-card">
+        <div class="paper-idx">L/02</div>
+        <div><div class="paper-ttl">Purification of tagged protein over-produced in <em>E. coli</em>.</div><div class="paper-meta">Current Science · 20 May 2012</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPMENT -->
+<section id="equipment">
+  <div class="wrap">
+    <div class="sec-tag">§05 — Apparatus &amp; Methods</div>
+    <h2 class="sec-h">The <em>tools</em> of the trade.</h2>
+    <div class="equip-wrap rv">
+      <div class="equip-head">
+        <span>Process Area</span><span>Scale</span><span>Equipment &amp; Techniques</span>
+      </div>
+      <div class="equip-row">
+        <div class="eq-area"><span>I</span>Downstream — R&amp;D</div>
+        <div class="eq-scale">0.4 L → 10 L</div>
+        <div class="eq-gear"><p><b>Chromatography</b> AKTA Explorer · Basic · Prime · Bio-Rad purification system.</p><p><b>TFF</b> 50 cm² → 0.5 m². Viral filtration. Hollow-fibre filtration.</p><p><b>Vessels</b> Refolding vessels, bench scale.</p></div>
+      </div>
+      <div class="equip-row">
+        <div class="eq-area"><span>II</span>Downstream — Pilot</div>
+        <div class="eq-scale">50 L → 200 L</div>
+        <div class="eq-gear"><p><b>Chromatography</b> AKTA Pilot · AKTA Process · RP-HPLC system.</p><p><b>TFF</b> Millipore 4 m² · cassettes 0.5 m² → 2 m².</p><p><b>Columns</b> up to 200 mm diameter.</p></div>
+      </div>
+      <div class="equip-row">
+        <div class="eq-area"><span>III</span>Downstream — Production</div>
+        <div class="eq-scale">Microbial: 100 L → 1 KL<br/>Mammalian: 50 L → 2 KL</div>
+        <div class="eq-gear"><p><b>Homogeniser</b> GEA 3006 · 100 L/h.</p><p><b>Centrifuge</b> Westphalia.</p><p><b>Filtration</b> Pall HFDF / MFDF / DFF · 5 L/min/m².</p><p><b>Chromatography</b> AKTA Process · AKTA Pilot · Columns 200 / 300 / 500 mm.</p><p><b>Other</b> Crystallisation · Precipitation · Lyophilisation (LyoStar) · Refolding vessels to 5 KL · Formulation.</p></div>
+      </div>
+      <div class="equip-row">
+        <div class="eq-area"><span>IV</span>In-process &amp; Analytical</div>
+        <div class="eq-scale">Downstream</div>
+        <div class="eq-gear"><p><b>Electrophoresis</b> Bio-Rad SDS-PAGE · Coomassie · Silver staining.</p><p><b>Blotting</b> Bio-Rad Western Blot.</p><p><b>HPLC</b> RPC · SEC · IE on Waters / Agilent.</p><p><b>Spectroscopy</b> UV / Fluorescence — Thermo · GE.</p></div>
+      </div>
+      <div class="equip-row">
+        <div class="eq-area"><span>V</span>Upstream — R&amp;D</div>
+        <div class="eq-scale">0.4 L</div>
+        <div class="eq-gear"><p><b>Centrifuge</b> Cubota.</p><p><b>Fermentation</b> Sartorius fermenter.</p><p><b>Lysis</b> GEA high-pressure homogeniser.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & REFERENCES -->
+<section id="education" class="sec-soft">
+  <div class="wrap">
+    <div class="sec-tag">§06 — Provenance &amp; References</div>
+    <h2 class="sec-h">Where the work <em>was learned</em>.</h2>
+    <div class="edu-grid rv">
+      <div class="edu-card">
+        <div class="edu-type">Postgraduate</div>
+        <div class="edu-inst">Banaras Hindu University</div>
+        <div class="edu-deg">M.Sc. Biotechnology</div>
+        <div class="edu-loc">IIT (BHU) · Varanasi, India</div>
+        <div class="edu-yr">2004 — 2006</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-type">Doctoral · In Progress</div>
+        <div class="edu-inst">Guru Ghasidas Vishwavidyalaya</div>
+        <div class="edu-deg">Ph.D. — Department of Biotechnology</div>
+        <div class="edu-loc">Bilaspur, India</div>
+        <div class="edu-yr">Pursuing</div>
+      </div>
+    </div>
+    <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;" class="rv">— Professional References</div>
+    <div class="ref-grid rv">
+      <div class="ref-card">
+        <div class="ref-nm">Dr. Suman Kundu</div>
+        <div class="ref-ti">Professor &amp; Director</div>
+        <div class="ref-af">Department of Biochemistry · BITS Pilani — Goa</div>
+        <div class="ref-ct"><span>✉ kundusuman1@yahoo.com</span><span>☏ +91 98990 07460</span></div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-nm">Dr. K. K. Raina</div>
+        <div class="ref-ti">Senior Vice-President</div>
+        <div class="ref-af">Med Therapy Biotechnology Pvt. Ltd. · Noida, India</div>
+        <div class="ref-ct"><span>☏ +91 97640 00034</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-sec">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="sec-tag">§07 — Correspondence</div>
+        <h2 class="sec-h">Open to advisory &amp;<br/><em>transfer leadership</em>.</h2>
+        <p class="contact-tagline">Available for process development advisory, technology transfer leadership, and collaboration on recombinant therapeutics projects globally.</p>
+      </div>
+      <div class="ch-list">
+        <a href="mailto:surya.protein@gmail.com" class="ch">
+          <div class="ch-ico">✉</div>
+          <div><div class="ch-lbl">Email</div><div class="ch-val">surya.protein@gmail.com</div></div>
+        </a>
+        <a href="tel:+917090333340" class="ch">
+          <div class="ch-ico">☏</div>
+          <div><div class="ch-lbl">Mobile</div><div class="ch-val">+91 70903 33340</div></div>
+        </a>
+        <a href="https://www.linkedin.com/in/surya-b-kumar-00805914" class="ch">
+          <div class="ch-ico">in</div>
+          <div><div class="ch-lbl">LinkedIn</div><div class="ch-val">surya-b-kumar-00805914</div></div>
+        </a>
+        <div class="ch">
+          <div class="ch-ico">⌖</div>
+          <div><div class="ch-lbl">Location</div><div class="ch-val">South Bopal, Ahmedabad — Gujarat, India</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft">© 2026 Surya B K Singh · All rights reserved</div>
+    <div class="ft">Set in IBM Plex Sans · IBM Plex Serif · IBM Plex Mono</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
